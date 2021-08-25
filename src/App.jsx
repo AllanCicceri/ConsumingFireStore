@@ -15,7 +15,8 @@ function App() {
 
   return (
     <div className="app">
-        <input type="text" className="frmUser-name"  placeholder="type your name here"
+        <label htmlFor="userName"></label>
+        <input name="userName" type="text" className="frmUser-name"  placeholder="type your name here"
           value={user.name} onChange={e => setUser({name: e.target.value, email: user.email})}/>
         
         <input type="text" className="frmUser-email"  placeholder="type your email adress here"
