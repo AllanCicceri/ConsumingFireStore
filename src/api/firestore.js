@@ -18,6 +18,19 @@ export default {
             email: user.email
         }).then(docRef => console.log("Doc ref: ", docRef.id))
         .catch(error => console.log("Error add doc:", error))
+    },
+
+    getAllUsers: async () => {
+        const users = []
+        
+        await db.collection('users').get()
+            .then(snapShot => {
+                snapShot.forEach(doc => {
+                    users.push(doc.data())
+                })
+            })
+
+        return users
     }
 }
 
